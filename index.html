@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trafix App Overview</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .overview {
+            margin-bottom: 40px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="password"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        button {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        .error {
+            color: red;
+            font-size: 0.9rem;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Trafix App</h1>
+        <p>Your Companion for Smart Navigation and Traffic Insights</p>
+    </header>
+    <div class="container">
+        <div class="overview">
+            <h2>Overview</h2>
+            <p>
+                Trafix App provides real-time traffic updates, navigation tools, and exciting gamified features 
+                to make your commute hassle-free and rewarding. Earn points, view leaderboards, and 
+                redeem rewards as you travel smarter and better!
+            </p>
+        </div>
+        <div class="login-section">
+            <h2>Login</h2>
+            <p>Log in to access your account and enjoy the features of Trafix App.</p>
+            <form id="loginForm">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                <button type="submit">Log In</button>
+                <p id="error" class="error"></p>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <p>Trafix App © 2024</p>
+    </footer>
+
+    <script>
+        // Simple login validation logic
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === "admin" && password === "password123") {
+                alert("Welcome, " + username + "! You have successfully logged in.");
+                window.location.href = "dashboard.html"; // Replace with your dashboard page link
+            } else {
+                document.getElementById('error').textContent = "Invalid username or password!";
+            }
+        });
+    </script>
+</body>
+</html>
